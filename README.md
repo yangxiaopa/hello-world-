@@ -25,3 +25,14 @@ except FileNotFoundError:
     print('sorry,the file '+file_path1+' does not exist.')
 else:
     print(contents)
+    
+f=open('/home/jiangjun/Exam01.tcl','r')
+o=open('/home/jiangjun/sbyangsuo.txt','w')
+for line in f.readlines():
+	if line.startswith("node"):
+		strs=line.strip().split(" ")
+		slist=strs[1:]
+		o.write('node ('+slist[0]+','+slist[1]+','+slist[2]+','+slist[3]+')\n')
+f.close()
+o.close()    
+    
