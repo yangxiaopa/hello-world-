@@ -15,3 +15,13 @@ except FileNotFoundError:
 else:
     #for line in file_object1:
         print(contents)
+        
+#避免读取空文件夹失效！        
+file_path1='C:/Users/YSS/Desktop/file_Tcl/Exam1.tcl'
+try:
+    with open(file_path1) as file_object1:
+        contents=file_object1.read()     
+except FileNotFoundError:
+    print('sorry,the file '+file_path1+' does not exist.')
+else:
+    print(contents)
