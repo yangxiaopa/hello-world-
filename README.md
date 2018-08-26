@@ -26,8 +26,9 @@ except FileNotFoundError:
 else:
     print(contents)
     
-f=open('/home/jiangjun/Exam01.tcl','r')
-o=open('/home/jiangjun/sbyangsuo.txt','w')
+#jj提供脚本    
+f=open('C:/Users/YSS/Desktop/file_Tcl/Exam1.tcl','r')
+o=open('C:/Users/YSS/Desktop/file_Tcl/NEWexam.tcl','w')
 for line in f.readlines():
 	if line.startswith("node"):
 		strs=line.strip().split(" ")
