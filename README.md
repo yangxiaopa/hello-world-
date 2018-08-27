@@ -37,3 +37,34 @@ for line in f.readlines():
 f.close()
 o.close()    
     
+python impoort 用法
+1.import somemodule #导入某个模块 例如 ：
+	import sys #导入模块
+	sys.path.append('F:\openseespy') #提供搜索路径
+2.from somemodule import somefunction #导入模块的somefunction方法
+3.from somemodule import function1,function2,...  #导入模块的function1，function2等方法
+4.from somemodule import * #导入模块的所有方法
+
+关键字as的用法
+import somemodule as moduleA 
+from somemodule import somefunction as functionA
+接下来可直接调用moduleA、functionA 例如： 
+import numpy as np 
+from opensees import *
+module: A module is a file containing python definitions and statement. 所以module就是一个.py文件 
+package:包含.py文件的文件夹，文件夹中还包含一个特殊文件_.init_.py
+
+import sys
+sys.path.append('F:\openseespy')
+变量sys.path是一个字符串列表，用于确定解释器的模块搜索路径。
+
+以下为示例，查看函数的用法。
+import string
+help(string)
+
+
+
+
+
+
+
