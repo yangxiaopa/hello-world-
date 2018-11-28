@@ -1,0 +1,69 @@
+import <库名>
+<库名>.<函数名>(<函数参数>)
+#该方法不会出现函数重名的问题
+
+from <库名> import <函数名>
+from <库名> import *
+<函数名>(<函数参数>)
+该法可能会出现函数名冲突
+
+import <库名> as <库别名>
+<库别名>.<函数名>(<函数参数>)
+-----------------------------
+#TempConvert.py  温度转换代码
+TempStr = input("请输入带有符号的温度值：")
+if  TempStr[-1] in ['F', 'f']:            #TempStr[-1]索引字符串的最后一个字符
+    C = (eval(TempStr[0:-1]) - 32)/1.8    #TempStr[0:-1]切片字符串从0到最后一个字符但不包括最后一个字符的字符串
+    print("转换后的温度是{:.2f}C".format(C))
+elif TempStr[-1] in ['C', 'c']:
+    F = 1.8*eval(TempStr[0:-1]) + 32
+    print("转换后的温度是{:.2f}F".format(F))
+else:
+    print("输入格式有误") 
+--------------------------------   
+画笔控制函数
+turtle.penup() #画笔抬起
+turtle.pendown() #画笔落下
+turtle.pensize(width) #画笔宽度
+turtle.pencolor(color)  #color为颜色字符串或r、g、b值
+turtle.forward(d) #d可为正负数，向前或向后移动
+turtle.circle(r,angle)   #根据半径r绘制angle角度的弧形，r为正时圆心在半径左侧，反之在右侧
+turtle.setheading(angle) 别名 turtle.seth()   #改变海龟行进方向，angle海龟走的角度
+turtle.left(angle)    #海龟向左转
+turtle.right(angle)   #海龟向左转,angle 为海龟行进方向上旋转的角度
+///
+import turtle as T
+T.setup(650, 350, 200, 200)  #窗体的宽高及位子
+T.penup()         
+T.fd(-250)
+T.pendown()             #将画笔由绘图中心的原点向左移动250个像素距离
+T.pensize(25)
+T.pencolor('purple')
+T.seth(-40)           #seth(angle)改变海龟行进方向
+for i in range(4):
+    T.circle(40, 80)
+    T.circle(-40, 80)       #T.circle(r,angle)         
+T.circle(40, 40)
+T.fd(40)
+T.circle(16, 180)
+T.fd(40 * 2/3)
+T.circle(-100,90)
+T.done() 
+///
+循环语句，range()函数
+for <变量> in range (<函数名>)
+  <被循环执行的语句>
+for i in range(5):
+    print('hello:',i)
+hello: 0
+hello: 1
+hello: 2
+hello: 3
+hello: 4
+range(N)  #产生0到N-1的整数序列，共N个   
+range(N,M)#产生N到M-1的整数序列，共M-N个
+--------------------------------------
+
+
+
+
