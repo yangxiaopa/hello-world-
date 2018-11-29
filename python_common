@@ -19,4 +19,87 @@ min()
 int(x)  #将x变为整数，舍弃小数部分
 float(x) #将x变成浮点数，增加小数部分
 complex(x) #将整数变为复数，增加虚部
+-----------------------------------
+TEMSTR[M:N:K] #对字符串TEMSTR切片操作，M为开头，N为结尾，k为步长 
+[:N]  #从开头到N-1
+[M:]  #从M至结尾
+[::-1] #将字符前后颠倒
+----------------------------
+转义符\     \b #回退   \n #换行，光标移到下行首    \r #回车，将光标移到本行首
+-------------------------------------
+dayup = 1.0
+dayfactor = 0.01
+for i in range(365):
+    if i % 7 in [6,0]:
+        dayup = dayup * (1 - dayfactor)
+    else:
+        dayup = dayup * (1 + dayfactor)
+print("工作日的力量: {:.2f}".format(dayup)) 
+------------------------------------------
+#TempConvert.py
+TempStr = input("请输入带有符号的温度值：")
+if  TempStr[-1] in ['F', 'f']:            #TempStr[-1]索引字符串的最后一个字符
+    C = (eval(TempStr[0:-1]) - 32)/1.8    #TempStr[0:-1]切片字符串从0到最后一个字符但不包括最后一个字符的字符串
+    print("转换后的温度是{:.2f}C".format(C))
+elif TempStr[-1] in ['C', 'c']:
+    F = 1.8*eval(TempStr[0:-1]) + 32
+    print("转换后的温度是{:.2f}F".format(F))
+else:
+    print("输入格式有误") 
+---------------------------
+import turtle as T
+#T.setup(650, 350, 200, 200)  #窗体的宽高及位子
+T.setup(650,350,200,200)
+T.penup()         
+T.fd(-250)
+T.pendown()             #将画笔由绘图中心的原点向左移动250个像素距离
+T.pensize(25)
+T.pencolor('purple')
+T.seth(-40)           #seth(angle)改变海龟行进方向
+for i in range(4):
+    T.circle(40, 80)
+    T.circle(-40, 80)       #T.circle(r,angle)         
+T.circle(40, 40)
+T.fd(40)
+T.circle(16, 180)
+T.fd(40 * 2/3)
+T.circle(-100,90)
+T.done()        
+--------------------
+
+----------------------------------
+def dayup(df):
+    dayup = 1
+    for i in range(365):
+        if i % 7 in [6,0]:
+            dayup = dayup * (1 - 0.01)
+        else:
+            dayup = dayup * (1 + df)
+    return dayup
+dayfactor = 0.01
+while dayup(dayfactor) < 37.78:
+    dayfactor += 0.001
+print('工作日的努力参数是：{:.3f}'  .format(dayfactor))
+------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
