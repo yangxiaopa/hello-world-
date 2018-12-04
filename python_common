@@ -222,9 +222,38 @@ while 条件：
 else：
     语句2
 --------------
+random库概述
+随机数种子--->梅森旋转算法--->随机序列
+random.seed(10) #产生种子10对应的序列
+random.random() #生成一个0-1之间的随机数
+扩展随机函数
+randint(a,b) #生成一个[a,b]之间的整数 
+randrange(m,n[,k]) #生成一个[m,n]之间以k为步长的随机整数
+getrandbits(k) #生成一个k比特长度的随机数
+uniform(a,b) #生成一个[a,b]之间的随机小数
+random.choice(seq) #从序列seq中随机选择一个元素
+random.shuffle(s) #将序列seq中元素随机排列，返回打乱后的序列
+----------------------------------------------------------
+pi = 0
+N = 100
+for k in range(N):
+    pi += 1/pow(16,k)*(4/(8*k+1)-2/(8*k+4)-1/(8*k+5)-1/(8*k+6))
+print('圆周率值为：{}'.format(pi))
 
-
-
+import random
+import time
+DARTS = 1000*1000
+hits = 0
+start = time.perf_counter()
+for i in range(1,DARTS +1):
+    x,y = random.random(), random.random()
+    dist = pow(x**2 + y**2, 0.5)
+    if dist <= 1.0:
+        hits = hits + 1
+pi = 4 * (hits/DARTS)
+print('圆周率值为：{},计算时间为{}'.format(pi,time.perf_counter()-start))
+------------------------------------------------------------------------
+ 
 
 
 
