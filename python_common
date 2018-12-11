@@ -292,11 +292,37 @@ pyinstaller库常用参数
 -F --onefile  在dist文件夹中只生成独立的打包文件
 -i <图标文件.ico>   指定打包程序使用的图标(ico)文件
 例如： pyinstaller -i curve.ico -F practice.py 
-
-
-
-
-
+----------------------------------------------------
+集合包含多个元素的无序排列,元素不重复 {} , 
+s|T 包括在集合S和T中的所有元素 并集
+s-T 包括在集合S但不在T中的元素 差集
+S&T 包括同时在集合S和T中的元素
+S^T 包括集合S和T中的非相同元素
+s|=T 用s|T 结果更行集合s
+s-=T 更行集合s 包含在s但不在T中
+S&=T 更新集合s 包括同时在集合S和T中的元素
+S^=T 更新集合s 包括集合S和T中的非相同元素
+S.add(x) 将x增加到s中
+S.discard(x) 移除s中元素x 如果x不在s中不报错
+S.remove(x) 移除S中元素x,如果x不在集合S中，会产生keyError异常
+S.clear() 移除S中所有元素
+S.pop() 随机返回S的一个元素，更新S，若s为空会产生keyError异常
+S.copy() 返回集合S的一个副本
+len(S) 返回集合S元素的个数
+set(x) 将其他类型变量x装变为集合类型
+x in s 判断x是否在s中 返回Ture False
+------------------------------------
+s = {'yuy','jfhj',1234}
+for item in s:
+    print(item, end=' ')
+ 1234 yuy jfhj
+-------------------------
+try:
+    while True:
+        print(s.pop(), end=' ')  #使用s.pop()方法随机取回s的一个元素，直至s为空时返回异常，又由于try 和 except 可避免异常
+except:
+    pass
+-------------------------------------
 
 
 
